@@ -1,0 +1,64 @@
+:root { font-family: system-ui, -apple-system, sans-serif; color: #eef2f8; background: #131821; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+header { padding: 20px 6%; background: #202735; border-bottom: 1px solid #394254; display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.logo { display: block; filter: drop-shadow(0 4px 10px #a9d47833); }
+.wordmark { font-size: 21px; font-weight: 800; letter-spacing: -.02em; }
+.wordmark-accent { color: #a9d478; font-weight: 600; }
+.lab { margin-left: auto; font-size: 11px; letter-spacing: 2px; color: #b9c5d8; }
+main { max-width: 460px; margin: 64px auto; padding: 0 20px; }
+.card { padding: 32px; border: 1px solid #394254; background: #202735; border-radius: 14px; box-shadow: 0 20px 60px #0003; }
+.eyebrow { color: #a9d478; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+.title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+h1 { margin: 12px 0; font-size: 34px; }
+.intro { color: #b9c5d8; margin-bottom: 28px; }
+label { display: block; margin: 20px 0 8px; font-size: 14px; }
+input { width: 100%; padding: 13px; color: #eef2f8; background: #131821; border: 1px solid #657087; border-radius: 6px; font-size: 16px; }
+input:focus { outline: 2px solid #a9d478; outline-offset: 2px; }
+button { font: inherit; cursor: pointer; }
+button:focus-visible { outline: 2px solid white; outline-offset: 3px; }
+
+.primary-button { width: 100%; margin-top: 25px; padding: 13px; font-weight: 700; color: #15220d; background: #a9d478; border: 0; border-radius: 6px; transition: background-color .15s ease; }
+.primary-button:hover { background: #bde18f; }
+.primary-button:disabled { opacity: .6; cursor: wait; }
+
+.icon-button { display: inline-grid; place-items: center; width: 40px; height: 40px; padding: 0; color: #eef2f8; background: transparent; border: 0; border-radius: 50%; transition: opacity .15s ease, background-color .15s ease; }
+.icon-button:hover { background: #ffffff14; }
+.icon-button svg { display: block; }
+
+/* At 50% opacity the light icon keeps ~4.4:1 contrast on the card, above the WCAG 1.4.11 minimum of 3:1. */
+.info-button { opacity: .5; }
+.info-button:hover, .info-button:focus-visible, .info-button[aria-expanded="true"] { opacity: 1; }
+
+.demo-info { margin: -12px 0 8px; padding: 14px 16px; border: 1px solid #394254; border-left: 3px solid #a9d478; border-radius: 8px; background: #131821; font-size: 14px; animation: reveal .18s ease-out; }
+.demo-title { margin: 0 0 8px; font-weight: 700; }
+.demo-info dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin: 0; }
+.demo-info dt { color: #b9c5d8; }
+.demo-info dd { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; user-select: all; }
+
+.password-field { position: relative; }
+.password-field input { padding-right: 52px; }
+.password-toggle { position: absolute; top: 50%; right: 4px; transform: translateY(-50%); color: #b9c5d8; }
+.password-toggle:hover { color: #eef2f8; }
+.password-toggle .icon-eye-off, .password-toggle[aria-pressed="true"] .icon-eye { display: none; }
+.password-toggle[aria-pressed="true"] .icon-eye-off { display: block; }
+
+#message { min-height: 22px; font-size: 14px; line-height: 1.5; }
+.error { color: #ffb4ac; }
+.success { color: #b5e890; }
+.footer { text-align: center; font-size: 12px; color: #b9c5d8; line-height: 1.6; }
+
+.success-dialog { width: min(400px, calc(100% - 40px)); padding: 0; color: #eef2f8; text-align: center; background: #202735; border: 1px solid #394254; border-radius: 14px; box-shadow: 0 24px 80px #0008; }
+.success-dialog[open] { animation: pop .22s ease-out; }
+.success-body { padding: 32px; }
+.success-dialog::backdrop { background: #0b0e14b3; backdrop-filter: blur(3px); }
+.success-icon { display: grid; place-items: center; width: 56px; height: 56px; margin: 0 auto 16px; color: #15220d; background: #a9d478; border-radius: 50%; }
+.success-dialog h2 { margin: 0 0 8px; font-size: 24px; }
+.success-dialog p { margin: 0; color: #b9c5d8; line-height: 1.6; overflow-wrap: anywhere; }
+.success-dialog strong { color: #eef2f8; }
+
+@keyframes reveal { from { opacity: 0; transform: translateY(-4px); } }
+@keyframes pop { from { opacity: 0; transform: scale(.96); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after, ::backdrop { animation: none !important; transition: none !important; } }
+@media (max-width: 480px) { main { margin-top: 32px; } .card { padding: 24px; } }

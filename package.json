@@ -1,0 +1,9 @@
+{
+  "name": "hw2-secure-login",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Juice Shop-inspired login with browser and server validation",
+  "type": "module",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=22" }
+}
