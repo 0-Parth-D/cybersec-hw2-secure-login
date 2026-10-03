@@ -45,11 +45,3 @@ The email check is the assignment's basic rule, not complete email-address verif
 ## Manual checks
 
 Browser checks: submit blank fields, email without `@`, a seven-character password, wrong credentials, and correct demo credentials. The browser should block the first three, the server should reject incorrect credentials, and the demo account should succeed.
-
-## Part 3 attack attempts
-
-With the app running, enter `<img src=x onerror=alert('XSS')>@example.com` as email and an eight-or-more-character password. Expect a generic invalid-credentials response and no JavaScript alert. Try `student@example.com' OR 1=1--` with a wrong password; expect rejection. Inspect requests and responses in browser developer tools and take your own screenshots. These are expected outcomes, not a claim that you personally executed the tests.
-
-## Public GitHub submission
-
-Create a public GitHub repository and upload this project's files. Include the actual repository URL in the assignment PDF and verify that it is visible while signed out. A local folder or localhost URL does not meet the public-repository requirement.
